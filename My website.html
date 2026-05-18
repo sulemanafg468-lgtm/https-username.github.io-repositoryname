@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+    margin: 0;
+    padding: 0%;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.titles{
+    padding: 15px 20px;
+    width: 100%;
+    backdrop-filter: blur(2px);
+    display: flex;
+    color: white;
+    z-index: 1;
+    position: fixed;
+}
+
+.titles h3{
+    letter-spacing: 3px;
+    font-size: 23px;
+}
+
+.titles a{
+    margin-left: 2%;
+    color: white;
+    text-decoration: none;
+    transition: 100ms ease;
+}
+
+.titles a:hover{
+    transform: scale(1.05);
+    color: gray;
+}
+
+.suleman{
+    
+    text-align: center;
+}
+
+.suleman h1{
+    display: flex;
+    justify-self: center;
+    margin-top: 15%;
+    font-size: 75px;
+    letter-spacing: 2px;
+}
+
+.suleman h5{
+    color: rgb(195, 195, 195);
+    margin-top: 1%;
+    font-weight: 300;
+    font-size: 15px;
+    white-space: pre-line;
+    letter-spacing: 1px;
+}
+
+.suleman button{
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border: none;
+    padding: 18px 45px;
+    border-radius: 50px;
+    margin-top: 2%;
+    transition: 200ms linear;
+    font-weight: bold;
+}
+
+.suleman button:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.about{
+    height: 80vh;
+    margin-top: 30%;
+}
+
+.about h1{
+    margin-left: 8%;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 4%;
+    font-size: 40px;
+}
+
+.about p{
+    margin-left: 8%;
+    white-space: pre-line;
+    margin-top: 3%;
+    text-transform: capitalize;
+    line-height: 150%;
+    word-spacing: 1px;
+    color: rgb(205, 205, 205);
+}
+
+.build{
+    height: 100vh;
+}
+
+.build h1{
+    margin-top: 5%;
+    text-align: center;
+}
+
+.build .box{
+    margin-left: 2%;
+    margin-top: 1%;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 3%;
+    grid-row-gap: 10%;
+}
+
+.build .box1{
+    text-align: center;
+    padding:30px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(2px);
+    border:1px solid rgba(255,255,255,0.1);
+    transition:.4s;
+}
+
+.build .box1:hover{
+    transform: translateY(-15px);
+    border: 1px solid white;
+}
+
+.build .box1 h3{
+    margin-bottom: 1%;
+}
+
+.build .box1 p{
+    color: rgb(207, 207, 207);
+}
+
+.build .box2{
+    text-align: center;
+    padding:30px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(2px);
+    border:1px solid rgba(255,255,255,0.1);
+    transition:.4s;
+}
+
+.build .box2:hover{
+    transform: translateY(-15px);
+    border: 1px solid white;
+}
+
+.build .box2 h3{
+    margin-bottom: 1%;
+}
+
+.build .box2 p{
+    color: rgb(207, 207, 207);
+}
+
+.build .box3{
+    text-align: center;
+    padding:30px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(2px);
+    border:1px solid rgba(255,255,255,0.1);
+    transition:.4s;
+}
+
+.build .box3:hover{
+    transform: translateY(-15px);
+    border: 1px solid white;
+}
+
+.build .box3 h3{
+    margin-bottom: 1%;
+}
+
+.build .box3 p{
+    color: rgb(207, 207, 207);
+}
+
+.box4{
+    text-align: center;
+    padding:30px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(2px);
+    border:1px solid rgba(255,255,255,0.1);
+    transition:.4s;
+}
+
+.box4:hover{
+    transform: translateY(-15px);
+    border: 1px solid white;
+}
+
+.box4 h3{
+    margin-bottom: 1%;
+}
+
+.box4 p{
+    color: rgb(207, 207, 207);
+}
+
+.contact{
+    height: 100vh;
+}
+
+.contact h1{
+    text-align: center;
+    margin-top: 4%;
+    margin-left: 8%;
+}
+
+.contact .input1 input{
+    margin-top: 6%;
+    margin-left: 2%;
+    width: 25%;
+    border-radius: 6px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.282);
+    background-color: rgba(255, 255, 255, 0.019);
+    backdrop-filter: blur(2px);
+    color: white;
+    font-size: 15px;
+}
+
+.contact input:focus{
+    border: 1px solid white;
+}
+
+.contact .input2 input{
+    margin-left: 2%;
+    margin-top: 1%;
+    width: 25%;
+    border-radius: 6px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.282);
+    background-color: rgba(255, 255, 255, 0.019);
+    backdrop-filter: blur(2px);
+    color: white;
+    font-size: 15px;
+}
+
+.contact .input3 input{
+    margin-left: 2%;
+    margin-top: 1%;
+    width: 25%;
+    border-radius: 6px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.282);
+    background-color: rgba(255, 255, 255, 0.019);
+    backdrop-filter: blur(2px);
+    color: white;
+    font-size: 15px;
+}
+
+.contact .input4 input{
+    margin-left: 2%;
+    margin-top: 1%;
+    width: 25%;
+    border-radius: 6px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.282);
+    background-color: rgba(255, 255, 255, 0.019);
+    backdrop-filter: blur(2px);
+    color: white;
+    font-size: 15px;
+}
+
+.contact textarea{
+    padding: 15px;
+    width: 25%;
+    margin-left: 2%;
+    margin-top: 1%;
+    border: 1px solid rgba(255, 255, 255, 0.282);
+    background-color: rgba(255, 255, 255, 0.019);
+    backdrop-filter: blur(2px);
+    color: white;
+}
+
+.btn3 button{
+    padding: 15px;
+    width: 27.5%;
+    border-radius: 4px;
+    margin-left: 2%;
+    background-color: rgba(255, 255, 255, 0.39);
+    backdrop-filter: blur(1px);
+    border: none;
+    transition: 400ms ease;
+}
+@media screen and (min-width: 1920px){
+    .btn3 button{
+        width: 26.6%;
+    }
+}
+.btn3 button:hover{
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 0 15px 1px white;
+}
+
+.gallery{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 25px;
+    padding-bottom: 80px;
+}
+
+.card{
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #222;
+    border-radius: 12px;
+    transition: 400ms ease-in;
+}
+
+.card img{
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: 400ms ease-in-out;
+}
+
+.card:hover{
+    box-shadow: 1px 0 10px 4px rgba(245, 245, 245, 0.333);
+    border: 1px solid whitesmoke;
+}
+
+.card img:hover{
+    transform: scale(1.09);
+    backdrop-filter: brightness(70%);
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <canvas id="bg"></canvas>
+    <div class="titles">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#build">Build</a>
+        <a href="#contact">Contact</a>
+    </div>
+<div id="home">
+    <div class="suleman">
+    <div>.</div>
+
+        <h1>Suleman</h1>
+        <h5>Future web developer, gamer, and creator of modern digital experiences</h5>
+        <a href=""><button>Explore Work</button></a>
+    </div>
+</div>
+
+    <div id="about">
+        <div class="about">
+            <div style="color: black; opacity: 0%;">.</div>
+            <h1>About Me</h1>
+            <p>I am learning HTML, CSS and JavaScript and building modern websites. My goal is to become a 
+                professional developer and create powerful applications and gaming platforms.</p>
+        </div>
+    </div>
+
+    <div id="build">
+        <div class="build">
+            <div style="opacity: 0%;">.</div>
+            <h1>My Build</h1>
+            <div class="box">
+            <div class="box1"
+            ><h3>Gaming Website</h3>
+            <p>Modern Website for Gaming Contact</p>
+        </div>
+            <div class="box2">
+                <h3>YouTube Channel</h3> 
+                <p>Gaming Walkthrough videos</p>
+            </div>
+
+
+
+            <div class="box3">
+                <h3>Portfolio Website</h3>
+                <p>Personal developer protfolio</p>
+
+            </div>
+
+            <div class="box4">
+            <h3>Tiktok Channel</h3>
+            <p>Tools and software coming soon.</p>
+            
+    </div>
+
+        </div>
+            </div>
+                </div>
+            
+                <div id="gallery">
+                    <div class="gallery">
+                        <div class="card"><img src="harley-quinn-margot-robbie-uz-3840x2400.jpg" alt=""></div>
+                        <div class="card"><img src="south-tyrol-3740524.jp" alt=""></div>
+                        <div class="card"><img src="pexels-ahmetyuksek-3172040.jpg" alt=""></div>
+                        <div class="card"><img src="pexels-atahandemir-3388830.jpg" alt=""></div>
+                        <div class="card"><img src="pexels-bertellifotografia-34552794.jg" alt=""></div>
+                        <div class="card"><img src="pexels-bertellifotografia-34552804.jp" alt=""></div>
+                        <div class="card"><img src="pexels-jasminka-cerimovic-129684296-2043861.jpg" alt=""></div>
+                        <div class="card"><img src="pexels-foysal-ahmed-2102283-6053288.jp" alt=""></div>
+                        <div class="card"><img src="waterfall-5838582.jp" alt=""></div>
+                    </div>
+                </div>
+
+    <div id="contact">
+        <div class="contact">
+            <div style="opacity: 0%;">.</div>
+            <h1>Contact</h1>
+            <div class="input">
+            <div class="input1"><input type="text" placeholder="Full Name"></div>
+            <div class="input2"><input type="text" placeholder="Last Name"></div>
+            <div class="input3"><input type="text" placeholder="Address"></div>
+            <div class="input4"><input type="email" placeholder="Your Email"></div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Massage"></textarea>
+            <div class="btn3"><a href="#"><button>Send Massage</button></a></div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        
+const canvas=document.getElementById("bg")
+const ctx=canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let stars=[]
+
+for(let i=0;i<250;i++){
+
+stars.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2,
+speed:Math.random()*0.5
+})
+
+}
+
+function animate(){
+
+ctx.fillStyle="black"
+ctx.fillRect(0,0,canvas.width,canvas.height)
+
+ctx.fillStyle="white"
+
+stars.forEach(s=>{
+
+ctx.beginPath()
+ctx.arc(s.x,s.y,s.size,0,Math.PI*2)
+ctx.fill()
+
+s.y+=s.speed
+
+if(s.y>canvas.height){
+
+s.y=0
+s.x=Math.random()*canvas.width
+
+}
+
+})
+
+requestAnimationFrame(animate)
+
+}
+
+animate()
+const images=document.querySelectorAll(".card img")
+const viewer=document.getElementById("viewer")
+const big=document.getElementById("big")
+const close=document.getElementById("close")
+
+images.forEach(img=>{
+img.onclick=()=>{
+viewer.style.display="flex"
+big.src=img.src
+}
+})
+
+close.onclick=()=>{
+viewer.style.display="none"
+}
+
+viewer.onclick=(e)=>{
+if(e.target===viewer){
+viewer.style.display="none"
+}
+}
+    </script>
+</body>
+</html>
